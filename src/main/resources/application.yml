@@ -1,0 +1,20 @@
+custom:
+  client:
+    user:
+      base-url: https://jsonplaceholder.typicode.com/users
+      client-id: client-id
+      secret-key: secret-key
+    post:
+      base-url: https://jsonplaceholder.typicode.com/posts
+      client-id: client-id
+      secret-key: secret-key
+    photo:
+      base-url: https://jsonplaceholder.typicode.com/photos
+      client-id: client-id
+      secret-key: secret-key
+
+#logging:
+#  level:
+#    com.mylib.user: DEBUG
+#    com.mylib.post: DEBUG
+#    com.mylib.photo: DEBUG
