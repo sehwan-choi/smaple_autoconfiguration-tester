@@ -22,8 +22,8 @@ import java.util.List;
 
 @SpringBootApplication
 @RequiredArgsConstructor
-@EnablePhotoApiClients
-@EnableUserApiClients
+@EnablePhotoApiClients(decoder = "photoDecoder")
+@EnableUserApiClients(errorDecoder = "userErrorDecoder", decoder = "userDecoder")
 @EnablePostApiClients
 public class StarterApplication {
 
