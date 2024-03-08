@@ -24,7 +24,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @EnablePhotoApiClients(decoder = "photoDecoder")
 @EnableUserApiClients(errorDecoder = "userErrorDecoder", decoder = "userDecoder")
-@EnablePostApiClients
+@EnablePostApiClients(credentialsInterceptor = "customRequestInterceptor")
 public class StarterApplication {
 
 	@Autowired

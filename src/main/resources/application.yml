@@ -13,8 +13,8 @@ custom:
       client-id: client-id
       secret-key: secret-key
 
-#logging:
-#  level:
+logging:
+  level:
 #    com.mylib.user: DEBUG
-#    com.mylib.post: DEBUG
+    com.mylib.post: DEBUG
 #    com.mylib.photo: DEBUG

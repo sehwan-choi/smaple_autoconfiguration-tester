@@ -68,4 +68,9 @@ public class CustomConfiguration {
 
         return new ResponseEntityDecoder(new SpringDecoder(objectFactory));
     }
+
+    @Bean
+    public CustomRequestInterceptor customRequestInterceptor() {
+        return new CustomRequestInterceptor();
+    }
 }
