@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.PropertyNamingStrategies;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import com.mylib.crypto.impl.AES256Crypto;
 import feign.FeignException;
 import feign.Response;
 import feign.codec.Decoder;
@@ -22,6 +23,8 @@ import java.util.Collections;
 
 @Configuration
 public class CustomConfiguration {
+
+    private final String aesKey = "A957D12D8F5B1265DB1E9CE46CB33123";
 
     @Bean
     public ErrorDecoder userErrorDecoder() {
@@ -72,5 +75,10 @@ public class CustomConfiguration {
     @Bean
     public CustomRequestInterceptor customRequestInterceptor() {
         return new CustomRequestInterceptor();
+    }
+
+    @Bean
+    public AES256Crypto crypto() {
+        return new AES256Crypto(aesKey);
     }
 }

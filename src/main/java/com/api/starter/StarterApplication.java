@@ -1,5 +1,6 @@
 package com.api.starter;
 
+import com.mylib.crypto.impl.AES256Crypto;
 import com.mylib.photo.EnablePhotoApiClients;
 import com.mylib.photo.client.PhotoApiClient;
 import com.mylib.photo.client.dto.PhotoResponse;
@@ -36,11 +37,20 @@ public class StarterApplication {
 	@Autowired
 	PhotoApiClient photoApiService;
 
+	@Autowired
+	AES256Crypto crypto;
+
 	@PostConstruct
 	public void init () throws NoSuchAlgorithmException {
 		user();
 		post();
 		photo();
+
+		String aa = "abc";
+		String encrypt = crypto.encrypt(aa);
+		System.out.println("encrypt = " + encrypt);
+		String decrypt = crypto.decrypt(encrypt);
+		System.out.println("decrypt = " + decrypt);
 	}
 
 	private void user() throws NoSuchAlgorithmException {
