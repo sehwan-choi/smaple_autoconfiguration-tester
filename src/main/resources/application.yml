@@ -18,3 +18,7 @@ logging:
 #    com.mylib.user: DEBUG
     com.mylib.post: DEBUG
 #    com.mylib.photo: DEBUG
+
+common:
+  aes:
+    key: 59C3E93B9EDB31B115ADAC35D7DE8123

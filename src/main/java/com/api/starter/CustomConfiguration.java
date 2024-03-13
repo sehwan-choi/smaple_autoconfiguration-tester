@@ -10,6 +10,7 @@ import feign.Response;
 import feign.codec.Decoder;
 import feign.codec.ErrorDecoder;
 import org.springframework.beans.factory.ObjectFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.http.HttpMessageConverters;
 import org.springframework.cloud.openfeign.support.ResponseEntityDecoder;
 import org.springframework.cloud.openfeign.support.SpringDecoder;
@@ -24,7 +25,8 @@ import java.util.Collections;
 @Configuration
 public class CustomConfiguration {
 
-    private final String aesKey = "A957D12D8F5B1265DB1E9CE46CB33123";
+    @Value("${common.aes.key}")
+    private String aesKey;
 
     @Bean
     public ErrorDecoder userErrorDecoder() {
